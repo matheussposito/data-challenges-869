@@ -1,6 +1,6 @@
 ### MLFLOW configuration - - - - - - - - - - - - - - - - - - -
 
-MLFLOW_URI = "https://mlflow.lewagon.co/"
+MLFLOW_URI = "https://mlflow.lewagon.ai/"
 EXPERIMENT_NAME = "[country] [city] [user] model + version"
 
 ### DATA & MODEL LOCATIONS  - - - - - - - - - - - - - - - - - - -

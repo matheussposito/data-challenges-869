@@ -96,7 +96,7 @@ The package should be able to:
 - Train a `RandomForestRegressor`
 - Evaluate the performance
 - Save the trained model to disk
-- Save the parameters and metrics of the run to the [Le Wagon MLFlow server](https://mlflow.lewagon.co)
+- Save the parameters and metrics of the run to the [Le Wagon MLFlow server](https://mlflow.lewagon.ai)
 
 </details>
 
