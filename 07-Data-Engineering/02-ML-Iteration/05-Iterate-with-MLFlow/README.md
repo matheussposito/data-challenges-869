@@ -2,7 +2,7 @@
 
 Before carrying on, make sure that you understood:
 - The structure of the `Trainer` class from the first challenge
-- The way to log a metric and a parameter on a hosted MLflow server such as https://mlflow.lewagon.co/
+- The way to log a metric and a parameter on a hosted MLflow server such as https://mlflow.lewagon.ai/
 - How to pass multiple keyword argument parameters to a function or method using `**kwargs` and how to access them in the function or method
 
 If any of these is unclear, ask for a TA.
@@ -52,7 +52,7 @@ Now that you are all set, have a go at as many runs as you wish for your experim
 
 ⚠️ Make sure you **cross validate** your trainings
 
-View the results on https://mlflow.lewagon.co/
+View the results on https://mlflow.lewagon.ai/
 
 And as always, while building the pipeline and updating the code, first train your models on small data samples in order to iterate quickly on code errors, and preferably on your own machine.
 

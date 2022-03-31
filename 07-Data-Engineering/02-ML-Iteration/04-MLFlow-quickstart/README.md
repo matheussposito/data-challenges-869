@@ -64,7 +64,7 @@ That is just fine, but what if you want to share your results with your team or 
 
 In order to solve this issue, we will be using a hosted MLflow server. The server will be reachable from any machine on the Internet. It will be able to store the results of experiments resulting from the training of models on any machine connected to the Internet. Anyone on the Internet will be able to observe the results of the experiments.
 
-We will be using a Le Wagon hosted MLflow server in order to do this : https://mlflow.lewagon.co/
+We will be using a Le Wagon hosted MLflow server in order to do this : https://mlflow.lewagon.ai/
 
 Let's log the same parameters on the remote MLflow server. In order to do that, we will slightly modify `ml_flow_test.py`:
 
@@ -75,7 +75,7 @@ from mlflow.tracking import MlflowClient
 EXPERIMENT_NAME = "test_experiment"
 
 # Indicate mlflow to log to remote server
-mlflow.set_tracking_uri("https://mlflow.lewagon.co/")
+mlflow.set_tracking_uri("https://mlflow.lewagon.ai/")
 
 client = MlflowClient()
 
@@ -102,13 +102,13 @@ Now, run the code once again:
 python ml_flow_test.py
 ```
 
-Let's have a look at the results: https://mlflow.lewagon.co/
+Let's have a look at the results: https://mlflow.lewagon.ai/
 
 What's that ? Are you having trouble finding out your results or the "test_experiment" amongst the myriads of other experiments created by all the students of the bootcamp ?
 
 👉 This is why we highly encourage you to create a custom experiment name matching the `[country code] [city] [login] model name + version` naming convention
 
-By the way, here is [the default experiment](https://mlflow.lewagon.co/#/experiments/94) 🎉
+By the way, here is [the default experiment](https://mlflow.lewagon.ai/#/experiments/94) 🎉
 
 ## Integrating MLflow to our packaged project
 
@@ -158,7 +158,7 @@ Once the code is appended to our trainer, we can log parameters and metrics in M
 One last thing: we need to define the URL of the MLflow server and the name of our experiment in our class :
 
 ``` python
-MLFLOW_URI = "https://mlflow.lewagon.co/"
+MLFLOW_URI = "https://mlflow.lewagon.ai/"
 EXPERIMENT_NAME = "[country code] [city] [login] model name + version"  # 🚨 replace with your country code, city, github_nickname and model name and version
 ```
 
@@ -172,10 +172,10 @@ Once the code is up, just run it:
 python -m TaxiFareModel.trainer
 ```
 
-... And verify that it logged correctly on https://mlflow.lewagon.co/
+... And verify that it logged correctly on https://mlflow.lewagon.ai/
 
 <details>
-  <summary markdown='span'><strong> 💡 Finding your experiment easily in https://mlflow.lewagon.co/ </strong></summary>
+  <summary markdown='span'><strong> 💡 Finding your experiment easily in https://mlflow.lewagon.ai/ </strong></summary>
 
 The easiest way to find your experiment without scrolling through the list of experiments is by using its `id`.
 
@@ -184,7 +184,7 @@ In order to do that, you can retrieve the `id` of the experiment in your code af
 ``` python
 experiment_id = trainer.mlflow_experiment_id
 
-print(f"experiment URL: https://mlflow.lewagon.co/#/experiments/{experiment_id}")
+print(f"experiment URL: https://mlflow.lewagon.ai/#/experiments/{experiment_id}")
 ```
 
 Another option is to use the name of your experiment in order to retrieve its id.
@@ -195,11 +195,11 @@ Another option is to use the name of your experiment in order to retrieve its id
 import mlflow
 from mlflow.tracking import MlflowClient
 
-mlflow.set_tracking_uri("https://mlflow.lewagon.co/")
+mlflow.set_tracking_uri("https://mlflow.lewagon.ai/")
 
 EXPERIMENT_NAME = "test_experiment"
 experiment_id = MlflowClient().get_experiment_by_name(EXPERIMENT_NAME).experiment_id
-print(f"experiment URL: https://mlflow.lewagon.co/#/experiments/{experiment_id}")
+print(f"experiment URL: https://mlflow.lewagon.ai/#/experiments/{experiment_id}")
 ```
 
 </details>
