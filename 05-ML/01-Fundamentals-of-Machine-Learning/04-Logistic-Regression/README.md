@@ -1,6 +1,6 @@
 # Logistic Regression
 
-Up until now, you have been modelling a regression task. This time around, you will be modelling a **classification task** on the famous Titanic dataset.
+Up until now, you have been modeling a regression task. This time around, you will be modeling a **classification task** on the famous Titanic dataset.
 
 ## Download the dataset
 
