@@ -1,3 +1,4 @@
+
 import pandas as pd
 import numpy as np
 from olist.data import Olist
@@ -107,7 +108,7 @@ class Product:
             .groupby('product_id')\
             .sum()\
             .rename(columns={'price': 'sales'})
-    
+
     def get_training_data(self):
         """
         Returns a DataFrame with:
