@@ -1,6 +1,6 @@
 # Recap
 
-In this Recap, we will go over two multi-classification modelling strategies:
+In this Recap, we will go over two multi-classification modeling strategies:
 
 - One vs One
 - One vs Rest

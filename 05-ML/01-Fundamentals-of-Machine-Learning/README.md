@@ -2,7 +2,7 @@
 
 In today's challenges, you will:
 
-- Familiarize yourself with Scikit-Learn and its modelling workflow
+- Familiarize yourself with Scikit-Learn and its modeling workflow
 - Model a regression task with the Linear Regression algorithm
 - Model a classification task with the Logistic Regression algorithm
 - Use K-Fold cross-validation to evaluate model performance
