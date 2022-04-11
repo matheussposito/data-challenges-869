@@ -278,6 +278,8 @@ Step #0 - "Build": Step 3/5 : RUN pip install -U pip
 Step #0 - "Build":  ---> Running in 25e3ea8cde29
 ```
 
+[//]: # ( markdown comment test )
+
 ### Option 2: check the logs of your service
 
 This is always the first thing to check once your service is running...
