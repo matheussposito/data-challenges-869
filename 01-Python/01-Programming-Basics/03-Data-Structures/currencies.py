@@ -14,7 +14,6 @@ def convert(amount, currency):
     currency is a string
     """
     rate = RATES.get(amount[1]+currency)
-    print(rate)
     if rate:
         return round(rate*amount[0])
     return rate
