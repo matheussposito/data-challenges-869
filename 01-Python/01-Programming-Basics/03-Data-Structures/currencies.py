@@ -1,6 +1,7 @@
 # pylint: disable=missing-docstring
-
-# TODO: add some currency rates
+'''
+This is the docstring to explain what the file does
+'''
 RATES = {
     'USDEUR': 0.85,
     'GBPEUR': 1.13,
