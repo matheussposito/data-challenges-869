@@ -4,7 +4,7 @@
 
 For this recap, you can choose between two options:
 
-Option 1 : `Custom One-Hot-Encoder correction (30 min)`
+Option 1 : `Custom One-Hot-Encoder correction (~ 30min) + Q&A with teacher`
 
 ```bash
 cd ~/code/<user.github_nickname>/data-challenges/05-ML/08-Workflow/07-Custom-Encoder
