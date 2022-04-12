@@ -1,4 +1,5 @@
 Run the following command in your Terminal to go inside of the recap folder:
+
 ```bash
 cd 01-Python/03-SQL-Basics/Recap
 ````
