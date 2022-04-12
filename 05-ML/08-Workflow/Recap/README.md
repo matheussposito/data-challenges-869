@@ -11,7 +11,7 @@ cd ~/code/<user.github_nickname>/data-challenges/05-ML/08-Workflow/07-Custom-Enc
 jupyter notebook custom_encoder.ipynb
 ```
 
-Option 2 : `Bonus - The cars' dataset pipeline`
+Option 2 : `Bonus - The cars' dataset preprocessor with column names (1h)`
 
 ```bash
 cd ~/code/<user.github_nickname>/data-challenges/05-ML/08-Workflow/06-Bonus
