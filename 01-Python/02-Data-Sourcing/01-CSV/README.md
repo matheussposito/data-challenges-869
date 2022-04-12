@@ -41,6 +41,7 @@ Does that seem correct to you? What is the type of the `row` variable line 7 in 
 
 
 ## Read csv file line by line without header
+
 In the previous example we iterated through all the rows of csv file including header. But suppose we want to skip the header and iterate over the remaining rows of csv file.
 Try updating the code of `phone_book.py` to ignore the header (first line) and only print last name + phone number. This is the output you should get:
 
@@ -51,6 +52,7 @@ Starr: 789
 ```
 
 ## Read csv file line by line using csv module DictReader object
+
 Now try refactoring the code using the [`csv.DictReader`](https://docs.python.org/3/library/csv.html#csv.DictReader) class. You should no longer need the `line_count` variable. Also, what is the type of `row` now? Is it still the same as before? Which way do you think is the most readable ? As usual, discuss the code with your buddy and check your understanding with `type()`.
 
 After each question is solved please `add`/`commit`/`push` your code.
