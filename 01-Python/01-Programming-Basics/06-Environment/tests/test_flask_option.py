@@ -14,5 +14,5 @@ class TestFlaskOption(unittest.TestCase):
         self.assertEqual(start(), "Starting in production mode...")
 
     def test_start_with_no_flask_env(self):
-        del os.environ['FLASK_ENV']
-        self.assertEqual(start(), "Starting in production mode...")
+        os.environ['FLASK_ENV'] = ''
+        self.assertEqual(start(), "Starting in empty mode...")
