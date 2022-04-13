@@ -40,9 +40,9 @@ python phone_book.py
 Does that seem correct to you? What is the type of the `row` variable line 7 in the `print(row)` statement? Compare your guess with your buddy, and check the actual result with `type()` as well.
 
 
-## Read csv file line by line without header
+## Read CSV file line by line without header
 
-In the previous example we iterated through all the rows of csv file including header. But suppose we want to skip the header and iterate over the remaining rows of csv file.
+In the previous example we iterated through all the rows of CSV file including header. But suppose we want to skip the header and iterate over the remaining rows of CSV file.
 Try updating the code of `phone_book.py` to ignore the header (first line) and only print last name + phone number. This is the output you should get:
 
 ```bash
