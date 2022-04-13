@@ -1,6 +1,6 @@
 In this challenge, we will learn how to load data from a CSV file with pure Python.
 
-## 🔥 Warm-up - Read csv file line by line with header
+## 🔥 Warm-up - Read CSV file line by line with header
 
 ⚠️ For this warm-up, there is no `make` to run, so please read & follow the instructions closely!
 
