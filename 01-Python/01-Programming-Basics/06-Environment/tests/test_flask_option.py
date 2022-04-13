@@ -19,4 +19,4 @@ class TestFlaskOption(unittest.TestCase):
             start()
         except KeyError:
             self.fail("Your program should be able to run without a FLASK_ENV variable defined")
-        self.assertEqual(start(), "Starting in production mode...")
+        self.assertEqual(start(), "Starting in empty mode...")
