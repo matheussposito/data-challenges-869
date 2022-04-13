@@ -15,4 +15,8 @@ class TestFlaskOption(unittest.TestCase):
 
     def test_start_with_no_flask_env(self):
         del os.environ['FLASK_ENV']
-        self.assertEqual(start(), "Starting in production mode...")
+        try:
+            start()
+        except KeyError:
+            self.fail("Your program should be able to run without a FLASK_ENV variable defined")
+        self.assertEqual(start(), "Starting in empty mode...")
