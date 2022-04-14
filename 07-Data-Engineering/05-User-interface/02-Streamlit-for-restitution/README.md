@@ -207,7 +207,7 @@ Let's copy the files provided in the challenge to your web project...
   <summary markdown='span'><strong> 💡 Hint: how to copy `setup.py` and other provided files to the web project ? </strong></summary>
 
 ``` bash
-cp -r ~/code/<user.github_nickname>/data-challenges/07-Data-Engineering/05-User-interface/02-Streamlit-for-restitution/* ~/code/<user.github_nickname>/TaxiFareWebsite
+cp -r ~/code/<user.github_nickname>/<program.challenges_repo_name>/07-Data-Engineering/05-User-interface/02-Streamlit-for-restitution/* ~/code/<user.github_nickname>/TaxiFareWebsite
 ```
 
 </details>
