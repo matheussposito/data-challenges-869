@@ -7,7 +7,6 @@ def parse(html):
     ''' return a list of dict {name, difficulty, prep_time} '''
     pass  # YOUR CODE HERE
 
-
 def parse_recipe(article):
     ''' return a dict {name, difficulty, prep_time} modelising a recipe'''
     pass  # YOUR CODE HERE
