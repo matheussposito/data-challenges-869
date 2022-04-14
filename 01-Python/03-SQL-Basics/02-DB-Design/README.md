@@ -23,6 +23,7 @@ Which columns are primary keys? Which are foreign keys? What is the relationship
 Design the database schema for a movie database that meets these requirements.
 For this, you must use the [SQL Designer](http://db.lewagon.com).
 To check your solution, click on "Save / Load", then "Save XML", copy/paste the generated XML code in `movies.xml`. You can then `make` to check your solution.
+If you see a weird error, double check the syntax of your named columns and tables.
 
 ## Key learning points
 
