@@ -37,18 +37,18 @@ Here are the seller and customer workflows:
 
 The dataset consists of ~100k orders from 2016 and 2018 that were made on the Olist store, available as csv files on Le Wagon S3 bucket (❗️the datasets available on Kaggle may be slightly different).
 
-✅ Download the 9 datasets compressed in the `olist.zip` file, unzip it and store them in your `~/code/<user.github_nickname>/data-challenges/04-Decision-Science/data/csv` folder:
+✅ Download the 9 datasets compressed in the `olist.zip` file, unzip it and store them in your `~/code/<user.github_nickname>/<program.challenges_repo_name>/04-Decision-Science/data/csv` folder:
 
 ```bash
-curl https://wagon-public-datasets.s3.amazonaws.com/olist/olist.zip > ~/code/<user.github_nickname>/data-challenges/04-Decision-Science/data/csv/olist.zip
-unzip -d ~/code/<user.github_nickname>/data-challenges/04-Decision-Science/data/csv/ ~/code/<user.github_nickname>/data-challenges/04-Decision-Science/data/csv/olist.zip
-rm -rf ~/code/<user.github_nickname>/data-challenges/04-Decision-Science/data/csv/olist.zip
+curl https://wagon-public-datasets.s3.amazonaws.com/olist/olist.zip > ~/code/<user.github_nickname>/<program.challenges_repo_name>/04-Decision-Science/data/csv/olist.zip
+unzip -d ~/code/<user.github_nickname>/<program.challenges_repo_name>/04-Decision-Science/data/csv/ ~/code/<user.github_nickname>/<program.challenges_repo_name>/04-Decision-Science/data/csv/olist.zip
+rm -rf ~/code/<user.github_nickname>/<program.challenges_repo_name>/04-Decision-Science/data/csv/olist.zip
 ```
 
 Check you have the 9 datasets on your machine:
 
 ```bash
-ls ~/code/<user.github_nickname>/data-challenges/04-Decision-Science/data/csv
+ls ~/code/<user.github_nickname>/<program.challenges_repo_name>/04-Decision-Science/data/csv
 ```
 
 ## Setup
@@ -106,7 +106,7 @@ code .zshrc
 
 Now in your terminal run:
 ```bash
-cd ~/code/<user.github_nickname>/data-challenges/04-Decision-Science && echo "export PYTHONPATH=\"$(pwd):\$PYTHONPATH\""
+cd ~/code/<user.github_nickname>/<program.challenges_repo_name>/04-Decision-Science && echo "export PYTHONPATH=\"$(pwd):\$PYTHONPATH\""
 ```
 
 👉 Copy the resulting output line from your terminal and paste it at the bottom of your ~/.zshrc file. Don't forget to save and restart all your terminal windows to take into account this change.
@@ -118,7 +118,7 @@ cd ~/code/<user.github_nickname>/data-challenges/04-Decision-Science && echo "ex
 Go to your `01-Project-Setup` folder and run an `ipython` session:
 
 ```bash
-cd ~/code/<user.github_nickname>/data-challenges/04-Decision-Science/01-Project-Setup
+cd ~/code/<user.github_nickname>/<program.challenges_repo_name>/04-Decision-Science/01-Project-Setup
 ipython
 ```
 
@@ -137,7 +137,7 @@ If you get something else than `pong`, raise a ticket to get some help from a TA
 Go back to the Decision Science directory, commit and push your code:
 
 ```bash
-cd ~/code/<user.github_nickname>/data-challenges/04-Decision-Science
+cd ~/code/<user.github_nickname>/<program.challenges_repo_name>/04-Decision-Science
 git add .
 git commit -m 'kick off olist challenge'
 git push origin master
