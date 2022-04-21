@@ -4,7 +4,7 @@
 
 ## Problem
 
->❓ How should Olist improve it's profit margin, given that it has:
+>❓ How should Olist improve its profit margin, given that it has:
 > - some revenues per sellers per months
 > - some revenues per orders
 > - some reputation costs (estimated) per bad reviews
