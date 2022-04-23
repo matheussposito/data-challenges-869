@@ -20,7 +20,33 @@ class Order:
         and filters out non-delivered orders unless specified
         """
         # Hint: Within this instance method, you have access to the instance of the class Order in the variable self, as well as all its attributes
-        pass  # YOUR CODE HERE
+        orders = self.data['orders'].copy()
+        orders = orders[orders['order_status'] == 'delivered'][[
+            'order_id', 'order_status', 'order_purchase_timestamp',
+            'order_delivered_customer_date', 'order_estimated_delivery_date'
+        ]]
+
+        # deal with datetime
+        orders['order_purchase_timestamp'] = pd.to_datetime(orders['order_purchase_timestamp'])
+        orders['order_delivered_customer_date'] = pd.to_datetime(orders['order_delivered_customer_date'])
+        orders['order_estimated_delivery_date'] = pd.to_datetime(orders['order_estimated_delivery_date'])
+
+        # compute wait time
+        orders['wait_time'] = (
+            orders['order_delivered_customer_date'] -
+            orders['order_purchase_timestamp']) / np.timedelta64(24, 'h')
+
+        # compute expected wait time
+        orders['expected_wait_time'] = (orders['order_estimated_delivery_date']\
+            - orders['order_purchase_timestamp']) / np.timedelta64(24, 'h')
+
+        # compute delay vs expected
+        orders['delay_vs_expected'] = ((orders['order_delivered_customer_date']\
+            - orders['order_estimated_delivery_date'])\
+            /np.timedelta64(24, 'h')) \
+            .apply(lambda x: x if x > 0 else 0)
+
+        return orders[['order_id', 'wait_time', 'expected_wait_time', 'delay_vs_expected', 'order_status']]
 
     def get_review_score(self):
         """
