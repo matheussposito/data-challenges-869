@@ -54,12 +54,12 @@ class Order:
         Returns a DataFrame with:
         order_id, dim_is_five_star, dim_is_one_star, review_score
         """
-        reviews = self.data['order_reviews'].copy()
-        reviews = reviews[['order_id', 'review_score']]
+        reviews = self.data['order_reviews'][['order_id',
+                                              'review_score']].copy()
 
-        reviews.loc[:,'dim_is_five_star'] = reviews.loc[:,'review_score']\
+        reviews['dim_is_five_star'] = reviews['review_score']\
             .apply(lambda x: 1 if x == 5 else 0)
-        reviews.loc[:,'dim_is_one_star'] = reviews.loc[:,'review_score']\
+        reviews['dim_is_one_star'] = reviews['review_score']\
             .apply(lambda x: 1 if x == 1 else 0)
 
         return reviews
