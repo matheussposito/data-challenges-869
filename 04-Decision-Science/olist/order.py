@@ -19,7 +19,8 @@ class Order:
         [order_id, wait_time, expected_wait_time, delay_vs_expected, order_status]
         and filters out non-delivered orders unless specified
         """
-        # Hint: Within this instance method, you have access to the instance of the class Order in the variable self, as well as all its attributes
+        # Hint: Within this instance method, you have access to the instance of the
+        # class Order in the variable self, as well as all its attributes
         orders = self.data['orders'].copy()
         orders = orders[orders['order_status'] == 'delivered'][[
             'order_id', 'order_status', 'order_purchase_timestamp',
@@ -53,7 +54,16 @@ class Order:
         Returns a DataFrame with:
         order_id, dim_is_five_star, dim_is_one_star, review_score
         """
-        pass  # YOUR CODE HERE
+        reviews = self.data['order_reviews'].copy()
+        reviews = reviews[['order_id', 'review_score']]
+
+        reviews.loc[:,'dim_is_five_star'] = reviews.loc[:,'review_score']\
+            .apply(lambda x: 1 if x == 5 else 0)
+        reviews.loc[:,'dim_is_one_star'] = reviews.loc[:,'review_score']\
+            .apply(lambda x: 1 if x == 1 else 0)
+
+        return reviews
+
 
     def get_number_products(self):
         """
