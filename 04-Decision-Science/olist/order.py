@@ -70,21 +70,35 @@ class Order:
         Returns a DataFrame with:
         order_id, number_of_products
         """
-        pass  # YOUR CODE HERE
+        products = self.data['order_items'][['order_id', 'product_id']].copy()
+        products = products.groupby('order_id', as_index=False).count().rename(
+            {
+                'product_id': 'number_of_products'
+            }, axis=1)
+        return products
 
     def get_number_sellers(self):
         """
         Returns a DataFrame with:
         order_id, number_of_sellers
         """
-        pass  # YOUR CODE HERE
+        sellers = self.data['order_items'][['order_id', 'seller_id']].copy()
+        sellers = sellers.groupby('order_id', as_index=False).nunique().rename(
+            {
+                'seller_id': 'number_of_sellers'
+            }, axis=1)
+        return sellers
 
     def get_price_and_freight(self):
         """
         Returns a DataFrame with:
         order_id, price, freight_value
         """
-        pass  # YOUR CODE HERE
+        prices = self.data['order_items'][[
+            'order_id', 'price', 'freight_value'
+        ]].copy()
+        prices = prices.groupby('order_id', as_index=False).sum()
+        return prices
 
     # Optional
     def get_distance_seller_customer(self):
@@ -92,7 +106,42 @@ class Order:
         Returns a DataFrame with:
         order_id, distance_seller_customer
         """
-        pass  # YOUR CODE HERE
+        # geo data
+        geo = self.data['geolocation'][['geolocation_zip_code_prefix', 'geolocation_lat', 'geolocation_lng']].copy().rename({'geolocation_zip_code_prefix': 'zipcode'}, axis=1)
+        geo = geo.groupby('zipcode', as_index=False).first()
+
+        # get order_id and customer_id
+        orders_customers = self.data['orders'][['order_id', 'customer_id']].copy()
+
+        # get order_id and seller_id
+        orders_sellers = self.data['order_items'][['order_id', 'seller_id']].copy()
+
+        # merge a df that contains order_id, customer_id and seller_id
+        orders_merged = orders_customers.merge(orders_sellers, on='order_id')
+
+        # get seller location info
+        sellers_loc = self.data['sellers'][['seller_id', 'seller_zip_code_prefix']].copy().rename({'seller_zip_code_prefix': 'zipcode'}, axis=1)\
+            .merge(geo, on='zipcode').drop(columns='zipcode').rename({'geolocation_lat': 'seller_lat', 'geolocation_lng': 'seller_lng'}, axis=1)
+
+        # get customer location info
+        customers_loc = self.data['customers'][['customer_id', 'customer_zip_code_prefix']].copy().rename({'customer_zip_code_prefix': 'zipcode'}, axis=1)\
+            .merge(geo, on='zipcode').drop(columns='zipcode').rename({'geolocation_lat': 'customer_lat', 'geolocation_lng': 'customer_lng'}, axis=1)
+
+        # merge the df with the ids to the dfs with the location info
+        orders_seller_customer = orders_merged.merge(
+            sellers_loc, on='seller_id').merge(
+                customers_loc,
+                on='customer_id').drop(columns=['customer_id', 'seller_id'])
+
+        # apply the harversine distance function
+        orders_seller_customer.loc[:,'distance_seller_customer'] = orders_seller_customer.apply(\
+            lambda x: haversine_distance(x['seller_lng'], x['seller_lat'], x['customer_lng'], x['customer_lat']), axis=1)
+
+        # groupby and take the mean for order_id (one order may have more than one seller)
+        orders_seller_customer = orders_seller_customer[[
+            'order_id', 'distance_seller_customer']].groupby('order_id', as_index=False).mean()
+
+        return orders_seller_customer
 
     def get_training_data(self,
                           is_delivered=True,
@@ -105,4 +154,17 @@ class Order:
         'distance_seller_customer']
         """
         # Hint: make sure to re-use your instance methods defined above
-        pass  # YOUR CODE HERE
+        wait_df = self.get_wait_time()
+        review_df = self.get_review_score()
+        product_df = self.get_number_products()
+        seller_df = self.get_number_sellers()
+        price_df = self.get_price_and_freight()
+        distance_df = self.get_distance_seller_customer()
+
+        if with_distance_seller_customer:
+            df = wait_df.merge(review_df).merge(product_df).merge(seller_df)\
+                .merge(price_df).merge(distance_df)
+            return df.dropna()
+
+        df = wait_df.merge(review_df).merge(product_df).merge(seller_df).merge(price_df)
+        return df.dropna()
