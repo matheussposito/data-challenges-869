@@ -1,4 +1,3 @@
-
 import pandas as pd
 import numpy as np
 from olist.data import Olist
@@ -141,8 +140,20 @@ class Seller:
         Returns a DataFrame with:
         'seller_id', 'share_of_five_stars', 'share_of_one_stars', 'review_score'
         """
-
-        pass  # YOUR CODE HERE
+        df = self.data['order_items'][['order_id', 'seller_id']].merge(
+            self.data['order_reviews'][['order_id', 'review_score']],
+            on='order_id').drop(columns='order_id')
+        df['share_of_five_stars'] = df['review_score'].map(lambda x: 1 if x==5 else 0)
+        df['share_of_one_stars'] = df['review_score'].map(lambda x: 1 if x==1 else 0)
+        new_df = df.groupby('seller_id', as_index=False).agg({
+            'review_score':
+            'mean',
+            'share_of_five_stars':
+            'sum',
+            'share_of_one_stars':
+            'sum'
+        })
+        return new_df
 
     def get_training_data(self):
         """
