@@ -54,7 +54,7 @@ import requests
 
 
 def get_quote():
-    # url = 'https://wagon-breaking-bad-quotes.herokuapp.com/v1/quotes'  # alternative API
+    # url = 'https://breaking-bad.lewagon.com/v1/quotes'  # alternative API
     url = 'https://breaking-bad-quotes.herokuapp.com/v1/quotes'
     response = requests.get(url).json()[0]
 
