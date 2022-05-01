@@ -12,7 +12,7 @@ Start the `playground.ipynb` notebook with `jupyter notebook`.
 The TensorFlow library is not compatible yet with your system, so you need to open the `playground.ipynb` notebook and all the Deep Learning module notebooks on [Google Colab](https://research.google.com).
 
 1. Upload the Jupyter notebook on Colab
-2. Go to Google drive, you will see a newly-created folder called Colab Notebooks, don’t rename it !
+2. Go to Google drive, you will see a newly-created folder called Colab Notebooks, don’t rename it!
 3. Go to this folder and prefix your challenge’s filename by `DL1` for example, you don’t want your Colab Notebooks folder to be a mess
 4. Right-click on this and Open with Colaboratory
 5. Do the challenge
