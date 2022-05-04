@@ -1,6 +1,6 @@
 In this challenge, we will learn how to load data from a CSV file with pure Python.
 
-## 🔥 Warm-up
+## 🔥 Warm-up - Read CSV file line by line with header
 
 ⚠️ For this warm-up, there is no `make` to run, so please read & follow the instructions closely!
 
@@ -39,6 +39,10 @@ python phone_book.py
 
 Does that seem correct to you? What is the type of the `row` variable line 7 in the `print(row)` statement? Compare your guess with your buddy, and check the actual result with `type()` as well.
 
+
+## Read CSV file line by line without header
+
+In the previous example we iterated through all the rows of CSV file including header. But suppose we want to skip the header and iterate over the remaining rows of CSV file.
 Try updating the code of `phone_book.py` to ignore the header (first line) and only print last name + phone number. This is the output you should get:
 
 ```bash
@@ -47,9 +51,9 @@ Harrisson: 456
 Starr: 789
 ```
 
-## Optional
+## Read CSV file line by line using `csv` module `DictReader` object
 
-Now try refactoring the code using the [`csv.DictReader`](https://docs.python.org/3/library/csv.html#csv.DictReader) class. You should no longer need the `line_count` variable. Also, what is the type of `row` now? Is it still the same as before? As usual, discuss the code with your buddy and check your understanding with `type()`.
+Now try refactoring the code using the [`csv.DictReader`](https://docs.python.org/3/library/csv.html#csv.DictReader) class. You should no longer need the `line_count` variable. Also, what is the type of `row` now? Is it still the same as before? Which way do you think is the most readable ? As usual, discuss the code with your buddy and check your understanding with `type()`.
 
 After each question is solved please `add`/`commit`/`push` your code.
 

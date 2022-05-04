@@ -41,7 +41,7 @@ packgenlite TaxiFareModel
 
 
 ```bash
-cp -r ~/code/<user.github_nickname>/data-challenges/07-Data-Engineering/02-ML-Iteration/03-Notebook-to-package/*.py ~/code/<user.github_nickname>/TaxiFareModel/TaxiFareModel
+cp -r ~/code/<user.github_nickname>/<program.challenges_repo_name>/07-Data-Engineering/02-ML-Iteration/03-Notebook-to-package/*.py ~/code/<user.github_nickname>/TaxiFareModel/TaxiFareModel
 ```
 
 </details>

@@ -14,7 +14,7 @@ FLASK_ENV=production python flask_option.py
 # => "Starting in production mode..."
 
 python flask_option.py
-# => "Starting in production mode..."
+# => "Starting in empty mode..."
 ```
 
-💡 **Tip**: have a look at the [`os`](https://docs.python.org/3/library/os.html) module.
+💡 **Tip**: have a look at the `os.getenv` in the [`os`](https://docs.python.org/3/library/os.html) module.
