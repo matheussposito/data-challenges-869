@@ -8,6 +8,7 @@ def parse(html):
     pass  # YOUR CODE HERE
 
 def parse_recipe(article):
+    ''' return a dict {name, difficulty, prep_time} modelising a recipe'''
     pass  # YOUR CODE HERE
 
 def write_csv(ingredient, recipes):
