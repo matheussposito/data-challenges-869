@@ -43,7 +43,7 @@ python test_scraping.py
 
 ## Challenge
 
-The goal of this challenge is to write a Python script that will parse the first 30 recipes for a given keyword and store them into the `recipes` folder. It should work like this:
+The goal of this challenge is to write a Python script that will parse the first 36 recipes for a given keyword and store them into the `recipes` folder. It should work like this:
 
 ```bash
 python recipe.py chocolate
@@ -60,15 +60,13 @@ head -n 3 recipes/chocolate.csv
 
 In order to get to this final result, there are a few functions to implement in `recipe.py`
 
-- `parse(html)`: this is the most important function. It needs to locate every recipe on the page, and dive into the `<div />` of a given recipe to locate its name, difficulty level and preparation time. After exploring the DOM, it will return a `list` of `dict` containing 3 keys (`name`, `difficulty`, `prep_time`).
+- `parse_recipe(article)`: this method needs to locate every recipe on the page, and dive into the `<div />` of a given recipe to locate its name, difficulty level and preparation time. It returns a dict containing 3 keys {`name`, `difficulty`, `prep_time`}
+- `parse(html)`: this is the most important function. After exploring the DOM and defining the `parse_recipe(article)` method, in this one it should return a `list` of `dict`. You can re-use the `parse_recipe(article)` method.
 - `write_csv(ingredient, recipes)`: this method takes two parameters. The first one is a `str`, the second one a `list` of `dict`. It will create a CSV file `{ingredient}.csv` and store the recipes from the list in the `recipes` directory.
 - `scrape_from_internet(ingredient, start)`: this method will work on the website and search for the given `ingredient`. Ignore the `start` parameter to begin with. It should return the HTML from the page (to be fed to the `parse` method).
 - `main()` Update the method so that `scrape_from_internet` is called instead of `scrape_from_file`. Run a few tests like `python recipe.py chocolate` or `python recipe.py strawberry`. After each run, check the `recipes` folder and open the created CSV file. Does it look OK to you?
-- `main()` with **pagination**: you now need to update the `main` and the `scrape_from_internet` functions so that the program does not stop at the first page of search results but downloads the first 5 pages of recipes if available!
+- `main()` with **pagination**: you now need to update the `main` and the `scrape_from_internet` functions so that the program does not stop at the first page of search results but downloads the first 3 pages of recipes if available!
 
-<details>
-<summary> 💡 Hint </summary>
-  Check-out [`requests.history`](https://2.python-requests.org/en/master/user/quickstart/#redirection-and-history).  How might you use this to stop your scrape early if there aren't 5 pages?
-</details>
+💡 **Hint**: Check-out [`requests.history`](https://2.python-requests.org/en/master/user/quickstart/#redirection-and-history). How might you use this to stop your scrape early if there aren't 3 pages?
 
 🙌 Have fun scraping!
