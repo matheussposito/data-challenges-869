@@ -1,12 +1,6 @@
 
 ## Objective
 
-<details style="background-color: #f8f8f8; border-radius: 3px; padding: 10px 20px;">
-<summary> 🔎 More on Cloud Functions </summary>
-
-  https://cloud.google.com/functions
-</details>
-
 Setup a recurring production job using **Cloud Scheduler** and **Cloud Functions**.
 
 **Cloud Scheduler** will regularly trigger the execution of the job.
