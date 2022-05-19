@@ -4,21 +4,8 @@ The first exercise is an gentle introduction to Deep Learning. Thanks to the Ten
 
 Start the `playground.ipynb` notebook with `jupyter notebook`.
 
-⚠️ If you are an **Apple M1** user, follow the next steps:
+⚠️ Disclaimer: for many Deep Challenges, it is advisable to work with `Google Colab`, which is like an online Jupyter Notebook.
 
-<details>
-    <summary>I am an Apple M1 user</summary>
+For this first challenge, you don't need Colab yet. 
 
-The TensorFlow library is not compatible yet with your system, so you need to open the `playground.ipynb` notebook and all the Deep Learning module notebooks on [Google Colab](https://research.google.com).
-
-1. Upload the Jupyter notebook on Colab
-2. Go to Google drive, you will see a newly-created folder called Colab Notebooks, don’t rename it!
-3. Go to this folder and prefix your challenge’s filename by `DL1` for example, you don’t want your Colab Notebooks folder to be a mess
-4. Right-click on this and Open with Colaboratory
-5. Do the challenge
-6. Click on File > Download `.ipynb`
-7. Store it in your data-challenges folder and push it
-
-</details>
-
-
+However, feel free to read our tutorial [here](https://kitt.lewagon.com/knowledge/tutorials/data_google_colab) if you want to get familiar with Colab. You may want to use it for the challenge `House Kaggle Competition Bis` and the next chapters of Deep Learning.
